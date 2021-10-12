@@ -20,7 +20,13 @@ export class ContactPageComponent implements OnInit {
   ngOnInit(): void { 
     const id = this.route.snapshot.paramMap.get('id');
     this.listing = fakeListings.find(listing => listing.id === id );
-    this.message = ' Hi , i m intrested in ${this.listing.name.toLowerCase()} !';
+    this.message = `Hi, I'm interested in your ${this.listing.name.toLowerCase()}!`;
+  }
+
+  sendMessage():void{
+    alert('Your message has been sent !');
+    this.router.navigateByUrl('/listings');
+    
   }
 
 }
